@@ -10,8 +10,9 @@ cd src
 sudo sh ./setup.sh
 cd ../../
 sudo rm -r install
-mkdir ~/workspace
-cd ~/workspace
+mkdir -p ~/ros_ws/src
+cd ~/ros_ws/src
+catkin_init_workspace
 git clone https://github.com/KITrokopter/Quadcopter-Application
 git clone https://github.com/KITrokopter/Camera-Application
 git clone https://github.com/KITrokopter/API-Application

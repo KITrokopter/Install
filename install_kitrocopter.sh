@@ -3,7 +3,7 @@ sudo cp ./etc/51-kinect.rules /etc/udev/rules.d/51-kinect.rules
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
 wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install libopencv-dev libopencv-core-dev libgtk2.0-dev libopencv-highgui-dev libopencv-features2d-dev libopencv-calib3d-dev libopencv-objdetect-dev git-core cmake freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev subversion ros-hydro-desktop-full
+sudo apt-get install libopencv-dev libopencv-core-dev libgtk2.0-dev libopencv-highgui-dev libopencv-features2d-dev libopencv-calib3d-dev subversion libopencv-objdetect-dev git-core cmake freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev subversion ros-hydro-desktop-full
 mkdir /tmp/install
 cd /tmp/install
 #cvblob does not compile yet :(
