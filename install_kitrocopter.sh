@@ -1,5 +1,6 @@
 #! /bin/bash
 sudo cp ./etc/51-kinect.rules /etc/udev/rules.d/51-kinect.rules
+sudo cp ./etc/lib64.conf /etc/ld.so.conf.d/
 sudo service udev restart
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
 wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
