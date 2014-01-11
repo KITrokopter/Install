@@ -1,4 +1,5 @@
 #! /bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )" # store current dir
 sudo cp ./etc/51-kinect.rules /etc/udev/rules.d/51-kinect.rules
 sudo cp ./etc/lib64.conf /etc/ld.so.conf.d/
 sudo service udev restart
@@ -22,12 +23,13 @@ cmake ..
 make
 sudo make install
 sudo ldconfig /usr/local/lib64/
-sudo glview
 sudo adduser $USER video
+glview
 sudo rm -r /tmp/install
 sudo rosdep init
 rosdep update
 echo "source /opt/ros/hydro/setup.bash" >> ~/.bashrc
-source /opt/ros/hydro/setup.bash # needed for catkin_init_workspace
+#source /opt/ros/hydro/setup.bash # needed for catkin_init_workspace
 source ~/.bashrc
-
+cd $DIR
+sudo cp etc/libfreenect.hpp.fixed /usr/local/include/freenect.hpp
