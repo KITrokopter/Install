@@ -16,6 +16,7 @@ make
 sudo make install
 cd ..
 git clone git://github.com/OpenKinect/libfreenect.git
+git checkout c55f3c94c422afc9f4c3c34327da9526b44f32a2 # use correct version, so that our fix doesn't destroy anything.
 cd libfreenect
 mkdir build
 cd build
@@ -32,4 +33,4 @@ echo "source /opt/ros/hydro/setup.bash" >> ~/.bashrc
 #source /opt/ros/hydro/setup.bash # needed for catkin_init_workspace
 source ~/.bashrc
 cd $DIR
-sudo cp etc/libfreenect.hpp.fixed /usr/local/include/freenect.hpp
+sudo cp etc/libfreenect.hpp.fixed /usr/local/include/freenect.hpp # fix wrong include in freenect.hpp
