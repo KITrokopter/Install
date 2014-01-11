@@ -17,3 +17,5 @@ git clone https://github.com/KITrokopter/Quadcopter-Application
 git clone https://github.com/KITrokopter/Camera-Application
 git clone https://github.com/KITrokopter/API-Application
 git clone https://github.com/KITrokopter/Control-Application
+source ../devel/setup.bash
+echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
