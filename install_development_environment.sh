@@ -7,7 +7,7 @@ sudo cp ./etc/cfclient.desktop /usr/share/applications
 sudo cp ./etc/cfclient.png /usr/share/icons
 sudo apt-get install -y python2.7 python-usb python-pygame python-qt4 mercurial qtcreator cmake qt4-qmake
 
-mkdir /tmp/install
+[ -d /tmp/install ] || mkdir /tmp/install
 cd /tmp/install
 hg clone https://bitbucket.org/bitcraze/crazyflie-pc-client/src
 
