@@ -1,4 +1,7 @@
 #! /bin/bash
+
+set -eu
+
 sudo apt-get update
 sudo cp ./etc/cfclient.desktop /usr/share/applications
 sudo cp ./etc/cfclient.png /usr/share/icons

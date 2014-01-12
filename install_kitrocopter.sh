@@ -1,4 +1,7 @@
 #! /bin/bash
+
+set -eu
+
 sudo cp ./etc/51-kinect.rules /etc/udev/rules.d/51-kinect.rules
 sudo cp ./etc/lib64.conf /etc/ld.so.conf.d/
 sudo service udev restart
