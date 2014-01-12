@@ -24,5 +24,9 @@ git clone https://github.com/KITrokopter/Quadcopter-Application
 git clone https://github.com/KITrokopter/Camera-Application
 git clone https://github.com/KITrokopter/API-Application
 git clone https://github.com/KITrokopter/Control-Application
-source ../devel/setup.bash
+
+cd ..
+# Initial build is necessary to create the devel directory.
+catkin_make
+source devel/setup.bash
 echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
