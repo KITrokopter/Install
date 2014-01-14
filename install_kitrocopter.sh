@@ -2,6 +2,24 @@
 
 set -eu
 
+# vim
+sudo apt-get install vim
+sudo apt-get install vim-gnome
+
+# github, mercurial
+sudo apt-get install git
+sudo apt-get install mercurial
+
+# crazyflie
+hg clone https://bitbucket.org/bitcraze/crazyflie-pc-clientl
+sudo apt-get install python2.7 python-usb python-pygame python-qt4
+sudo setup.sh
+
+# Setting udev permissions
+# https://bitbucket.org/bitcraze/crazyflie-pc-client 
+# The following steps ... use the USB Radio without being root... 
+
+
 # Get ubuntu release information
 . /etc/lsb-release
 
