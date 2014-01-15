@@ -2,18 +2,6 @@
 
 set -eu
 
-# vim
-sudo apt-get -y install vim
-sudo apt-get -y install vim-gnome
-
-# github, mercurial
-sudo apt-get -y install git
-sudo apt-get -y install mercurial
-
-# crazyflie
-hg clone https://bitbucket.org/bitcraze/crazyflie-pc-client
-sudo apt-get -y install python2.7 python-usb python-pygame python-qt4
-sudo setup.sh
 
 # Setting udev permissions
 # https://bitbucket.org/bitcraze/crazyflie-pc-client 
@@ -29,10 +17,16 @@ sudo service udev restart
 sudo sh -c "echo 'deb http://packages.ros.org/ros/ubuntu $DISTRIB_CODENAME main' > /etc/apt/sources.list.d/ros-latest.list"
 wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 sudo apt-get update
-sudo apt-get -y install libgtk2.0-dev subversion git-core cmake freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev ros-hydro-desktop python-dev python-numpy libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev libpng-dev
+sudo apt-get -y install libgtk2.0-dev python2.7 python-usb python-pygame python-qt4 mercurial vim vim-gnome subversion git-core cmake freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev ros-hydro-desktop python-dev python-numpy libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev libpng-dev
 
 mkdir /tmp/install
 cd /tmp/install
+
+# crazyflie
+hg clone https://bitbucket.org/bitcraze/crazyflie-pc-client
+cd crazyflie-pc-client
+sudo setup.sh
+cd ..
 
 # opencv
 
