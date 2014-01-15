@@ -3,16 +3,16 @@
 set -eu
 
 # vim
-sudo apt-get install vim
-sudo apt-get install vim-gnome
+sudo apt-get -y install vim
+sudo apt-get -y install vim-gnome
 
 # github, mercurial
-sudo apt-get install git
-sudo apt-get install mercurial
+sudo apt-get -y install git
+sudo apt-get -y install mercurial
 
 # crazyflie
 hg clone https://bitbucket.org/bitcraze/crazyflie-pc-client
-sudo apt-get install python2.7 python-usb python-pygame python-qt4
+sudo apt-get -y install python2.7 python-usb python-pygame python-qt4
 sudo setup.sh
 
 # Setting udev permissions
