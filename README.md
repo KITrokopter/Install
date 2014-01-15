@@ -3,7 +3,7 @@ Install
 
 Install scripts
 
-Supported versions: Ubuntu 12.04, 12.10, 13.04 (13.10 not supported by ROS yet)
+Supported versions: Ubuntu 12.04, 12.10 (untested), 13.04 (untested) (13.10 not supported by ROS yet)
 
 Run from whereever you want.
 
