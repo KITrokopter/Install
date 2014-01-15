@@ -11,7 +11,7 @@ sudo apt-get install git
 sudo apt-get install mercurial
 
 # crazyflie
-hg clone https://bitbucket.org/bitcraze/crazyflie-pc-clientl
+hg clone https://bitbucket.org/bitcraze/crazyflie-pc-client
 sudo apt-get install python2.7 python-usb python-pygame python-qt4
 sudo setup.sh
 
