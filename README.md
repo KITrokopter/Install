@@ -3,6 +3,8 @@ Install
 
 Install scripts
 
+Supported versions: Ubuntu 12.04, 12.10, 13.04 (13.10 not supported by ROS yet)
+
 Run from whereever you want.
 
 First install kitrocopter, then dev environment.
