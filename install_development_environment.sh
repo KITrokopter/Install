@@ -20,10 +20,10 @@ mkdir -p ~/ros_ws/src
 
 cd ~/ros_ws/src
 catkin_init_workspace
-git clone https://github.com/KITrokopter/Quadcopter-Application
-git clone https://github.com/KITrokopter/Camera-Application
-git clone https://github.com/KITrokopter/API-Application
-git clone https://github.com/KITrokopter/Control-Application
+git clone https://github.com/KITrokopter/Quadcopter-Application quadcopter_application
+git clone https://github.com/KITrokopter/Camera-Application camera_application
+git clone https://github.com/KITrokopter/API-Application api_application
+git clone https://github.com/KITrokopter/Control-Application control_application
 
 cd ..
 # Initial build is necessary to create the devel directory.
