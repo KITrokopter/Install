@@ -12,12 +12,14 @@ cd /tmp/install
 hg clone https://bitbucket.org/bitcraze/crazyflie-pc-client/src
 
 cd src
+sudo chmod a+x ./setup.sh
 sudo sh ./setup.sh
 
 cd ../../
 sudo rm -r install
-mkdir -p ~/ros_ws/src
 
+source /opt/ros/hydro/setup.bash # Should be necessary
+mkdir -p ~/ros_ws/src
 cd ~/ros_ws/src
 catkin_init_workspace
 git clone https://github.com/KITrokopter/Quadcopter-Application quadcopter_application
