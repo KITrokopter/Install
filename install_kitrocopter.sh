@@ -1,7 +1,7 @@
 #! /bin/bash
 
 set -eu
-
+. /etc/lsb-release
 
 # Setting udev permissions
 # https://bitbucket.org/bitcraze/crazyflie-pc-client 
@@ -13,7 +13,7 @@ set -eu
 sudo cp ./etc/51-kinect.rules /etc/udev/rules.d/51-kinect.rules
 sudo cp ./etc/lib64.conf /etc/ld.so.conf.d/
 sudo service udev restart
-sudo sh -c "echo 'deb http://packages.ros.org/ros/ubuntu precise main' > /etc/apt/sources.list.d/ros-latest.list"
+sudo sh -c "echo 'deb http://packages.ros.org/ros/ubuntu $DISTRIB_CODENAME main' > /etc/apt/sources.list.d/ros-latest.list"
 wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 sudo apt-get update
 sudo apt-get -y install libgtk2.0-dev python2.7 python-usb python-pygame python-qt4 mercurial vim vim-gnome subversion git-core cmake freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev ros-hydro-desktop python-dev python-numpy libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev libpng-dev
