@@ -4,6 +4,7 @@ Install
 Install scripts
 
 Supported versions: Ubuntu 12.04, 12.10 (untested), 13.04 (untested) (13.10 not supported by ROS yet)
+64-bit only.
 
 Run from whereever you want.
 
