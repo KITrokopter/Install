@@ -16,7 +16,7 @@ sudo service udev restart
 sudo sh -c "echo 'deb http://packages.ros.org/ros/ubuntu raring main' > /etc/apt/sources.list.d/ros-latest.list"
 wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 sudo apt-get update
-sudo apt-get -y install libgtk2.0-dev python2.7 python-usb python-pygame python-qt4 mercurial vim vim-gnome subversion git-core cmake freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev ros-hydro-desktop python-dev python-numpy libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev libpng-dev
+sudo apt-get -y install libgtk2.0-dev python2.7 python-usb python-pygame python-qt4 mercurial vim vim-gnome subversion git-core cmake freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev ros-hydro-desktop python-dev python-numpy libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev libpng-dev libboost-chrono1.48.0
 
 [ -d /tmp/install ] && rm -rf /tmp/install
 
