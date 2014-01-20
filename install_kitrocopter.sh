@@ -1,7 +1,7 @@
 #! /bin/bash
 
 set -eu
-
+. /etc/lsb-release
 
 # Setting udev permissions
 # https://bitbucket.org/bitcraze/crazyflie-pc-client 
@@ -9,7 +9,6 @@ set -eu
 
 
 # Get ubuntu release information
-. /etc/lsb-release
 
 sudo cp ./etc/51-kinect.rules /etc/udev/rules.d/51-kinect.rules
 sudo cp ./etc/lib64.conf /etc/ld.so.conf.d/
@@ -19,13 +18,18 @@ wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 sudo apt-get update
 sudo apt-get -y install libgtk2.0-dev python2.7 python-usb python-pygame python-qt4 mercurial vim vim-gnome subversion git-core cmake freeglut3-dev pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev ros-hydro-desktop python-dev python-numpy libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev libpng-dev libboost-chrono1.48.0
 
+[ -d /tmp/install ] && rm -rf /tmp/install
+
 mkdir /tmp/install
 cd /tmp/install
 
 # crazyflie
 hg clone https://bitbucket.org/bitcraze/crazyflie-pc-client
 cd crazyflie-pc-client
-sudo setup.sh
+echo "Running crazyflie setup"
+sudo chmod u+x setup.sh
+sudo ./setup.sh
+echo "Crazyflie setup complete"
 cd ..
 
 # opencv

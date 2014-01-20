@@ -9,16 +9,19 @@ sudo apt-get install -y python2.7 python-usb python-pygame python-qt4 mercurial 
 
 [ -d /tmp/install ] || mkdir /tmp/install
 cd /tmp/install
-hg clone https://bitbucket.org/bitcraze/crazyflie-pc-client/src
 
+echo "Installing crazyflie client"
+hg clone https://bitbucket.org/bitcraze/crazyflie-pc-client/src
 cd src
 sudo chmod a+x ./setup.sh
 sudo sh ./setup.sh
+echo "Crazyflie client installed"
 
 cd ../../
 sudo rm -r install
 
-source /opt/ros/hydro/setup.bash # Should be necessary
+echo "Setting up ros workspace"
+#source /opt/ros/hydro/setup.bash # Should not be necessary
 mkdir -p ~/ros_ws/src
 cd ~/ros_ws/src
 catkin_init_workspace
@@ -26,9 +29,10 @@ git clone https://github.com/KITrokopter/Quadcopter-Application quadcopter_appli
 git clone https://github.com/KITrokopter/Camera-Application camera_application
 git clone https://github.com/KITrokopter/API-Application api_application
 git clone https://github.com/KITrokopter/Control-Application control_application
-
 cd ..
 # Initial build is necessary to create the devel directory.
 catkin_make
+echo "Workspace was successfully set up"
+
 source devel/setup.bash
 echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
