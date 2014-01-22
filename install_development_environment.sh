@@ -32,6 +32,7 @@ git clone https://github.com/KITrokopter/Control-Application control_application
 cd ..
 # Initial build is necessary to create the devel directory.
 catkin_make
+catkin_make install # Do this so that packages can be run directly after installation.
 echo "Workspace was successfully set up"
 
 source devel/setup.bash
