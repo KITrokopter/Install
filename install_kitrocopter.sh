@@ -71,6 +71,6 @@ sudo rm -r /tmp/install
 sudo rosdep init
 rosdep update
 echo "source /opt/ros/hydro/setup.bash" >> ~/.bashrc
-#source /opt/ros/hydro/setup.bash # needed for catkin_init_workspace
-source ~/.bashrc
+source /opt/ros/hydro/setup.bash # needed for catkin_init_workspace
+#source ~/.bashrc # Sourcing .bashrc doesn't seem to work here.
 
