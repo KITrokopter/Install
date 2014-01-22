@@ -21,7 +21,7 @@ cd ../../
 sudo rm -r install
 
 echo "Setting up ros workspace"
-#source /opt/ros/hydro/setup.bash # Should not be necessary
+source /opt/ros/hydro/setup.bash # If the user didn't source .bashrc after kitrokopter installation.
 mkdir -p ~/ros_ws/src
 cd ~/ros_ws/src
 catkin_init_workspace
@@ -35,5 +35,10 @@ catkin_make
 catkin_make install # Do this so that packages can be run directly after installation.
 echo "Workspace was successfully set up"
 
-source devel/setup.bash
 echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
+
+# Finished
+echo
+echo "    $(tput setaf 2)Installation finished.$(tput sgr0) You should $(tput setaf 4)restart$(tput sgr0) your terminal now $(tput setaf 4)or execute$(tput sgr0):"
+echo "        source ~/.bashrc"
+echo

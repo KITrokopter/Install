@@ -1,16 +1,14 @@
 #! /bin/bash
 
+# Terminate on error
 set -eu
+
+# Get ubuntu release name
 . /etc/lsb-release
 
 # Setting udev permissions
-# https://bitbucket.org/bitcraze/crazyflie-pc-client 
-# The following steps ... use the USB Radio without being root... 
-
-
-# Get ubuntu release information
-
 sudo cp ./etc/51-kinect.rules /etc/udev/rules.d/51-kinect.rules
+# Adding /usr/local/lib64 as library path
 sudo cp ./etc/lib64.conf /etc/ld.so.conf.d/
 sudo service udev restart
 sudo sh -c "echo 'deb http://packages.ros.org/ros/ubuntu $DISTRIB_CODENAME main' > /etc/apt/sources.list.d/ros-latest.list"
@@ -71,6 +69,10 @@ sudo rm -r /tmp/install
 sudo rosdep init
 rosdep update
 echo "source /opt/ros/hydro/setup.bash" >> ~/.bashrc
-source /opt/ros/hydro/setup.bash # needed for catkin_init_workspace
-#source ~/.bashrc # Sourcing .bashrc doesn't seem to work here.
 
+# Finished
+echo
+echo "    $(tput setaf 2)Installation finished.$(tput sgr0) You should $(tput setaf 4)restart$(tput sgr0) your terminal now $(tput setaf 4)or execute$(tput sgr0):"
+echo "        source ~/.bashrc"
+echo
+echo "    Hint: If you are a developer, you might also want to run install_development_environment.sh"

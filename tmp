@@ -1,0 +1,6 @@
+
+echo
+echo "    $(tput setaf 2)Installation finished.$(tput sgr0) You should $(tput setaf 4)restart$(tput sgr0) your terminal now $(tput setaf 4)or execute$(tput sgr0):"
+echo "        source ~/.bashrc"
+echo
+
