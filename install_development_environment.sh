@@ -5,7 +5,7 @@ set -eu
 sudo apt-get update
 sudo cp ./etc/cfclient.desktop /usr/share/applications
 sudo cp ./etc/cfclient.png /usr/share/icons
-sudo apt-get install -y python2.7 python-usb python-pygame python-qt4 mercurial qtcreator cmake qt4-qmake libboost-chrono1.48-dev
+sudo apt-get install -y python2.7 python-usb python-pygame python-qt4 mercurial qtcreator cmake qt4-qmake
 
 [ -d /tmp/install ] || mkdir /tmp/install
 cd /tmp/install
