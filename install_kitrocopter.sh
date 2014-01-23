@@ -66,7 +66,6 @@ sudo ln /usr/local/include/libfreenect/libfreenect.h /usr/local/include/libfreen
 
 sudo ldconfig /usr/local/lib64/
 sudo adduser $USER video
-glview
 sudo rm -r /tmp/install
 sudo rosdep init
 rosdep update
