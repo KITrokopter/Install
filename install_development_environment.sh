@@ -22,6 +22,7 @@ sudo rm -r install
 
 echo "Setting up ros workspace"
 source /opt/ros/hydro/setup.bash # If the user didn't source .bashrc after kitrokopter installation.
+ROS_DISTRO=hydro # For whatever reason not set by setup.bash
 mkdir -p ~/ros_ws/src
 cd ~/ros_ws/src
 catkin_init_workspace
