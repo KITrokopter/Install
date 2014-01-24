@@ -1,8 +1,10 @@
+#!/bin/bash
+
 [ whoami = "root" ] && echo "Don't run me as root!" && exit
 
 USER_HOME=$HOME
 
-[ -d /tmp/install ] rm -rf /tmp/install
+[ -d /tmp/install ] && rm -rf /tmp/install
 mkdir -p /tmp/install
 cd /tmp/install
 
