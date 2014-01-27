@@ -11,5 +11,6 @@ cd /tmp/install
 
 echo "$USER_HOME/matlab/bin/glnxa64/" > matlab.conf
 sudo cp matlab.conf /etc/ld.so.conf.d/
+sudo ldconfig
 
 echo "export PATH=$PATH:$USER_HOME/matlab/bin" >> ~/.bashrc
