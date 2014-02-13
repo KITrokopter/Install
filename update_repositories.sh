@@ -13,6 +13,7 @@ cd $base
 
 # Update repositories.
 for repo in quadcopter_application camera_application api_application control_application; do
+  [ -d $base/$repo ] || continue
   cd $base/$repo
   git fetch
   # Only update when on master.
