@@ -6,6 +6,6 @@ echo "export PATH=$PATH:$USER_HOME/matlab/bin" >> ~/.bashrc
 cd $USER_HOME
 mkdir .matlabbackup
 cd matlab/bin/glnxa64
-mv libtiff5* ../../.matlabbackup
+mv libtiff* ../../.matlabbackup
 
 echo "Moved libtiff5 to ~/.matlabbackup"
