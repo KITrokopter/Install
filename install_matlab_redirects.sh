@@ -14,3 +14,8 @@ cd matlab/bin/glnxa64
 mv libtiff* ../../../.matlabbackup
 
 echo "Moved from ~/matlab/bin/glnxa64 libtiff* to ~/.matlabbackup"
+
+echo "Downloading amcctoolbox revision 49..."
+svn checkout -r49 http://amcctoolbox.googlecode.com/svn/trunk/ amcctoolbox
+
+echo "TODO: add amcctoolbox to matlab path"
