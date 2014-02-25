@@ -1,9 +1,14 @@
 #!/bin/bash
 
-echo 'export PATH=$PATH'":$USER_HOME/matlab/bin" >> ~/.bashrc
+if [ "$(id -u)" == "0" ]; then
+   echo "This script must not be run as root" 1>&2
+   exit 1
+fi
+
+echo 'export PATH=$PATH'":$HOME/matlab/bin" >> ~/.bashrc
 
 # Required to use matlab and libopencv_highgui at once
-cd $USER_HOME
+cd $HOME
 mkdir .matlabbackup
 cd matlab/bin/glnxa64
 mv libtiff* ../../../.matlabbackup
