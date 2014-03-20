@@ -11,7 +11,7 @@ echo 'export PATH=$PATH'":$HOME/matlab/bin" >> ~/.bashrc
 cd $HOME
 mkdir .matlabbackup
 cd matlab/bin/glnxa64
-mv libtiff* ../../../.matlabbackup
+mv libtiff* $HOME/.matlabbackup
 
 echo "Moved from ~/matlab/bin/glnxa64 libtiff* to ~/.matlabbackup"
 
