@@ -45,7 +45,7 @@ echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
 
 # Finished
 echo
-echo "    There is an VNC server running at :5"
+echo "    There is a VNC server running at :5"
 echo
 echo "    $(tput setaf 2)Installation finished.$(tput sgr0) You should $(tput setaf 4)restart$(tput sgr0) your terminal now $(tput setaf 4)or execute$(tput sgr0):"
 echo "        source ~/.bashrc"
