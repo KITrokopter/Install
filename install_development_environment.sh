@@ -5,7 +5,13 @@ set -eu
 sudo apt-get update
 sudo cp ./etc/cfclient.desktop /usr/share/applications
 sudo cp ./etc/cfclient.png /usr/share/icons
-sudo apt-get install -y python2.7 python-usb python-pygame python-qt4 mercurial qtcreator cmake qt4-qmake
+sudo cp ./etc/vncserver /etc/init.d/
+[ -d ~/.vnc ] || mkdir ~/.vnc
+cp ./etc/xstartup ~/.vnc/
+sudo update-rc.d -f vncserver defaults
+sudo apt-get install -y python2.7 python-usb python-pygame python-qt4 mercurial qtcreator cmake qt4-qmake tightvncserver gnome-session-fallback
+
+sudo service vncserver start
 
 [ -d /tmp/install ] || mkdir /tmp/install
 cd /tmp/install
@@ -38,6 +44,8 @@ echo "Workspace was successfully set up"
 echo "source ~/ros_ws/devel/setup.bash" >> ~/.bashrc
 
 # Finished
+echo
+echo "    There is an VNC server running at :5"
 echo
 echo "    $(tput setaf 2)Installation finished.$(tput sgr0) You should $(tput setaf 4)restart$(tput sgr0) your terminal now $(tput setaf 4)or execute$(tput sgr0):"
 echo "        source ~/.bashrc"
