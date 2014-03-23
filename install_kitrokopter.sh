@@ -62,7 +62,7 @@ sudo make install
 
 sudo ln /usr/local/include/libfreenect/libfreenect.h /usr/local/include/libfreenect.h
 
-sudo ldconfig /usr/local/lib64/
+sudo ldconfig
 sudo adduser $USER video
 sudo rm -r /tmp/install
 sudo rosdep init
