@@ -14,7 +14,7 @@ sudo service udev restart
 sudo sh -c "echo 'deb http://packages.ros.org/ros/ubuntu $DISTRIB_CODENAME main' > /etc/apt/sources.list.d/ros-latest.list"
 wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 sudo apt-get update
-sudo apt-get -y install libgtk2.0-dev python2.7 python-usb python-pygame python-qt4 mercurial vim vim-gnome subversion git-core cmake freeglut3-dev csh pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev ros-hydro-desktop python-dev python-numpy libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev libpng-dev
+sudo apt-get -y install libgtk2.0-dev python2.7 python-usb python-pygame python-qt4 mercurial vim vim-gnome subversion git-core cmake freeglut3-dev csh pkg-config build-essential libxmu-dev libxi-dev libusb-1.0-0-dev ros-hydro-desktop python-dev python-numpy libavcodec-dev libavformat-dev libswscale-dev libjpeg-dev libpng-dev autoconf
 
 [ -d /tmp/install ] && rm -rf /tmp/install
 
@@ -31,7 +31,6 @@ echo "Crazyflie setup complete"
 cd ..
 
 # opencv
-
 git clone https://github.com/Itseez/opencv
 cd opencv
 git checkout 2.4.8
@@ -59,8 +58,19 @@ cd build
 cmake ..
 make
 sudo make install
+cd ../..
 
 sudo ln /usr/local/include/libfreenect/libfreenect.h /usr/local/include/libfreenect.h
+
+# libsdl2
+wget http://www.libsdl.org/release/SDL2-2.0.3.tar.gz
+tar -xf SDL2-2.0.3.tar.gz
+cd SDL2-2.0.3
+./autogen.sh
+./configure
+make
+sudo make install
+cd ../
 
 sudo ldconfig
 sudo adduser $USER video
