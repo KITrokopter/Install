@@ -29,6 +29,7 @@ git clone https://github.com/KITrokopter/Quadcopter-Application quadcopter_appli
 git clone https://github.com/KITrokopter/Camera-Application camera_application
 git clone https://github.com/KITrokopter/API-Application api_application
 git clone https://github.com/KITrokopter/Control-Application control_application
+git clone https://github.com/KITrokopter/GUI-Application gui_application
 cd ..
 # Initial build is necessary to create the devel directory.
 catkin_make
